@@ -1,2 +1,2 @@
 # Attribute-Graph
-Implementing ABAC model in Neo4j along with an user interface
+The Attribute Based Access Control (ABAC), is one of the most powerful access control policies available. It encompasses popular models, such as the Role-Based Access Control (RBAC) model and can also enforce dynamic policies where authorizations depend on values of user, resource, or environment attributes. These attributes are stored in the form of a graph for faster access. The attribute graph has relations to link nodes within an attribute and in between two different attributes. In this paper, I have built an attribute graph in Neo4j and found the degree of similarity of the valid paths between the source and target nodes provided by the User.

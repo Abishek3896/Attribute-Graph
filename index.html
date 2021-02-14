@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://neo4j-documentation.github.io/developer-resources/language-guides/assets/css/main.css">
+    <title>ABAC</title>
+    <meta charset="UTF-8">
+    <title>ABAC</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<script>
+function myFunction() {
+var source= $('#source').val();
+var target= $('#target').val();
+  $.ajax({
+              url: "/graph",
+              type: "POST",
+              data: {source:source,
+              target:target}
+          }).done(function(response) {
+            var html= "<br><br><br><p> <b> RESULT : <b><p>";
+            response =response.result;
+                 $.each(response,function(key,val){
+                 console.log(val);
+                    html+="<p>"+val+"<p>"
+                });
+                html +="<br>";
+                $(".show-data").append(html);
+            });
+};
+  </script>
+<body>
+    <p>
+        Enter Source and Target Node<br><br>
+            Source_node<input type="text" id="source" name="source"><br><br>
+            Target_node<input type="text" id="target" name="target"><br><br>
+            <button id="clicked" onclick="myFunction()">Submit</button>
+        </p>
+    <div class="show-data" >
+    </div>
+</body>
+</html>

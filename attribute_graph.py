@@ -8,10 +8,10 @@ from neo4j import GraphDatabase, basic_auth
 
 app = Flask(__name__)
 
-url = os.getenv("NEO4J_URL","bolt://127.0.0.1:11003")
-password = os.getenv("NEO4J_PASSWORD","abishek@96")
+url = os.getenv("NEO4J_URL","bolt://127.0.0.1:******")
+password = os.getenv("NEO4J_PASSWORD","********")
 
-uri = "neo4j://localhost:11003"
+uri = "neo4j://localhost:*******"
 
 driver = GraphDatabase.driver(uri, auth=basic_auth("neo4j", password), encrypted=False)
 
@@ -109,4 +109,4 @@ def my_form_post():
       return jsonify(result=result)
 
 if __name__ == '__main__':
-    app.run(port=11003)
+    app.run(port=********)
